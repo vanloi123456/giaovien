@@ -1,0 +1,18 @@
+[
+  {
+    "id": "admin-master",
+    "email": "admin@giaoviensangtao.edu.vn",
+    "fullName": "Chủ sở hữu hệ thống (Master Admin)",
+    "passwordHash": "gvst_admin_salt_master:f7c8cfc1736bbe5749fc5517c13ebf5225829a9dc910b72195892fa927b67224",
+    "role": "superadmin",
+    "createdAt": "2026-11-02T14:25:19.789Z"
+  },
+  {
+    "id": "admin-owner",
+    "email": "daovanloi.tankhanhtrung3@gmail.com",
+    "fullName": "Thầy Đào Văn Lợi (Quản trị viên)",
+    "passwordHash": "gvst_admin_salt_master:f7c8cfc1736bbe5749fc5517c13ebf5225829a9dc910b72195892fa927b67224",
+    "role": "superadmin",
+    "createdAt": "2026-11-02T14:25:19.789Z"
+  }
+]

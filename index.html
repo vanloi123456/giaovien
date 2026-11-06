@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giáo Viên Sáng Tạo - Sáng tạo học liệu, Kết nối tri thức</title>
+    <script>
+      // Suppress and intercept harmless Vite HMR WebSocket connection attempts in cloud iframe sandbox
+      (function() {
+        if (typeof window !== 'undefined') {
+          var OrigWS = window.WebSocket;
+          if (OrigWS) {
+            window.WebSocket = function(url, protocols) {
+              if (
+                protocols === 'vite-hmr' ||
+                (typeof url === 'string' && (url.includes('vite') || url.includes('@vite')))
+              ) {
+                return {
+                  addEventListener: function() {},
+                  removeEventListener: function() {},
+                  send: function() {},
+                  close: function() {},
+                  readyState: 3, // CLOSED
+                  onopen: null,
+                  onclose: null,
+                  onerror: null,
+                  onmessage: null,
+                };
+              }
+              return new OrigWS(url, protocols);
+            };
+            window.WebSocket.prototype = OrigWS.prototype;
+          }
+
+          window.addEventListener('error', function(event) {
+            var msg = event && event.message ? String(event.message) : '';
+            var file = event && event.filename ? String(event.filename) : '';
+            if (
+              msg.includes('WebSocket') ||
+              msg.includes('createWebSocketModuleRunnerTransport') ||
+              file.includes('@vite/client') ||
+              file.includes('vite/client')
+            ) {
+              event.stopImmediatePropagation();
+              event.preventDefault();
+              return true;
+            }
+          }, true);
+
+          window.addEventListener('unhandledrejection', function(event) {
+            var reason = event && event.reason ? (event.reason.stack || event.reason.message || String(event.reason)) : '';
+            if (
+              reason.includes('WebSocket') ||
+              reason.includes('createWebSocketModuleRunnerTransport') ||
+              reason.includes('@vite/client')
+            ) {
+              event.stopImmediatePropagation();
+              event.preventDefault();
+            }
+          }, true);
+        }
+      })();
+    </script>
+    <meta name="description" content="Nền tảng quản lý, lưu trữ và nhúng trò chơi học tập AI dành cho giáo viên và học sinh tiểu học." />
+    <meta property="og:title" content="Giáo Viên Sáng Tạo" />
+    <meta property="og:description" content="Nền tảng quản lý, lưu trữ và nhúng trò chơi học tập AI dành cho giáo viên và học sinh tiểu học." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Google Fonts for friendly Vietnamese typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

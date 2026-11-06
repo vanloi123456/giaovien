@@ -1,0 +1,6 @@
+{
+  "name": "Giáo Viên Sáng Tạo",
+  "description": "Nền tảng quản lý, lưu trữ và nhúng trò chơi học tập AI dành cho giáo viên và học sinh tiểu học.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

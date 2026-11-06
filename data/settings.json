@@ -1,0 +1,11 @@
+{
+  "smtpHost": "smtp.gmail.com",
+  "smtpPort": 587,
+  "smtpSecure": false,
+  "smtpUser": "daovanloi.tankhanhtrung3@gmail.com",
+  "smtpPass": "",
+  "emailFrom": "daovanloi.tankhanhtrung3@gmail.com",
+  "emailFromName": "Hệ thống Giáo Viên Sáng Tạo",
+  "allowPublicBrowsing": true,
+  "maxCodeAgeDays": 30
+}
